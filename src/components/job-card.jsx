@@ -3,6 +3,8 @@ import { Bookmark, BookmarkCheck } from "lucide-react"
 import { useState } from "react"
 import { Button } from "./ui/button"
 
+import JobDetailsModal from "./job-details-modal"
+
 const JobCard = ({job}) => {
 
   const [isBookmarked, setIsBookmarked] = useState(false)
@@ -58,7 +60,9 @@ const JobCard = ({job}) => {
         {/* buttons */}
         <div className="flex items-center gap-5 mt-3">
           <Button className="btn">Apply</Button>
-          <Button className="btn">View Details</Button>
+          <JobDetailsModal
+          job={job}
+           />
         </div>
 
     </div>
